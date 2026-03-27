@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans overflow-x-hidden" style="font-family: 'Roboto Slab', serif;">
 
@@ -58,18 +63,39 @@
   </nav>
   
   <script>
-    // Toggle mobile menu with sliding animation
+    // Toggle mobile menu and icon state
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+    const menuIcon = menuToggle.querySelector('i');
   
+    const openMenu = () => {
+      mobileMenu.classList.remove('max-h-0');
+      mobileMenu.classList.add('max-h-screen');
+      menuIcon.classList.remove('fa-bars');
+      menuIcon.classList.add('fa-xmark');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('max-h-screen');
+      mobileMenu.classList.add('max-h-0');
+      menuIcon.classList.remove('fa-xmark');
+      menuIcon.classList.add('fa-bars');
+    };
+
     menuToggle.addEventListener('click', () => {
       if (mobileMenu.classList.contains('max-h-0')) {
-        mobileMenu.classList.remove('max-h-0');
-        mobileMenu.classList.add('max-h-screen');
+        openMenu();
       } else {
-        mobileMenu.classList.remove('max-h-screen');
-        mobileMenu.classList.add('max-h-0');
+        closeMenu();
       }
+    });
+
+    // Close menu after selecting a section so content is fully visible
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
     });
   </script>
   
