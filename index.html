@@ -4,70 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CESS Furnitures | Modern Custom Home Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 font-sans" style="font-family: 'Roboto Slab', serif;">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a
-                href="#locations"
-                class="group text-2xl font-bold text-amber-800 hover:text-amber-900 transition-all cursor-pointer transform hover:-translate-y-0.5 hover:scale-[1.02] rounded"
-            >
-                CESS <span class="text-gray-800 group-hover:text-gray-900 transition-colors">FURNITURES.</span>
-            </a>
-            <div class="hidden md:flex space-x-8 font-medium text-gray-600">
-                <a href="#collection" class="hover:text-amber-800">Collections</a>
-                <a href="#custom" class="hover:text-amber-800">Custom Orders</a>
-                <a href="#locations" class="hover:text-amber-800">Showrooms</a>
-            </div>
-            <a href="https://wa.me" class="bg-green-600 text-white px-5 py-2 rounded-full font-bold flex items-center hover:bg-green-700 transition">
-                <i class="fab fa-whatsapp mr-2"></i> Chat with Us
-            </a>
-        </div>
-    </nav>
+<nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      
+      <!-- Logo -->
+      <a
+        href="#locations"
+        class="group text-2xl font-extrabold text-amber-800 hover:text-amber-900 transition-all transform hover:-translate-y-0.5 hover:scale-[1.05]"
+      >
+        CESS <span class="text-gray-800 group-hover:text-gray-900 transition-colors">FURNITURE</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-10 font-medium text-gray-700">
+        <a href="#collection" class="hover:text-amber-800 transition">Collections</a>
+        <a href="#custom" class="hover:text-amber-800 transition">Custom Orders</a>
+        <a href="#locations" class="hover:text-amber-800 transition">Showrooms</a>
+        <a href="#value" class="hover:text-amber-800 transition">Why Choose Us</a>
+      </div>
+      
+      <!-- WhatsApp CTA -->
+      <a href="https://wa.me" class="hidden md:flex bg-green-600 text-white px-6 py-2 rounded-full font-bold items-center hover:bg-green-700 transition">
+        <i class="fab fa-whatsapp mr-2"></i> Chat with Us
+      </a>
+      
+      <!-- Mobile Hamburger -->
+      <button id="menu-toggle" class="md:hidden text-amber-800 text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out md:hidden bg-white shadow-lg">
+      <div class="flex flex-col space-y-4 px-6 py-6 font-medium text-gray-700">
+        <a href="#collection" class="hover:text-amber-800 transition">Collections</a>
+        <a href="#custom" class="hover:text-amber-800 transition">Custom Orders</a>
+        <a href="#locations" class="hover:text-amber-800 transition">Showrooms</a>
+        <a href="#value" class="hover:text-amber-800 transition">Why Choose Us</a>
+        <a href="https://wa.me" class="bg-green-600 text-white px-6 py-2 rounded-full font-bold flex items-center justify-center hover:bg-green-700 transition">
+          <i class="fab fa-whatsapp mr-2"></i> Chat with Us
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <script>
+    // Toggle mobile menu with sliding animation
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuToggle.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('max-h-0')) {
+        mobileMenu.classList.remove('max-h-0');
+        mobileMenu.classList.add('max-h-screen');
+      } else {
+        mobileMenu.classList.remove('max-h-screen');
+        mobileMenu.classList.add('max-h-0');
+      }
+    });
+  </script>
+  
 
-    <!-- Hero Section -->
-    <header class="relative h-[80vh] min-h-[520px] flex items-center justify-center text-center text-white px-4 overflow-hidden">
-        <img
-            src="images/sofa1.png"
-            alt="Modern furniture in a living room"
-            class="absolute inset-0 h-full w-full object-cover opacity-70"
-            loading="eager"
-        >
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative z-10 max-w-3xl">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-6">Exquisite Furniture, Tailored for Your Home</h2>
-            <p class="text-xl mb-8 opacity-90">Premium sofa sets, beds, and dining sets made-to-order. Quality you can trust, delivered across Kenya.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#collection" class="bg-amber-800 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-900">View Catalog</a>
-                <a href="#custom" class="bg-white text-amber-800 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100">Custom Inquiry</a>
-            </div>
-        </div>
-    </header>
+   <!-- Hero Section -->
+<header class="group relative h-[80vh] min-h-[520px] flex items-center justify-center text-center text-white px-4 overflow-hidden">
+    <img
+      src="images/hero3.jpg"
+      alt="Modern furniture in a living room"
+      class="absolute inset-0 h-full w-full object-cover object-[center_20%] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
+      loading="eager"
+    >
+    <div class="absolute inset-0 bg-black/45 transition-colors duration-500 group-hover:bg-black/0"></div>
+    
+    <div class="relative z-10 max-w-3xl">
+      <!-- Tagline -->
+      <p class="text-lg md:text-xl font-semibold tracking-wide uppercase text-amber-400 mb-4">
+        Luxury Furniture for Modern Kenyan Homes
+      </p>
+      
+      <!-- Headline -->
+      <h2 class="text-5xl md:text-6xl font-extrabold mb-6">
+        Timeless Comfort, Crafted for Kenya
+      </h2>
+      
+      <!-- Supporting Text -->
+      <p class="text-xl mb-8 opacity-90">
+        Discover living room, bedroom, and custom collections—designed with Kenyan artistry, priced with honesty, and built to bring elegance, warmth, and togetherness into every home.
+      </p>
+      
+      <!-- Call-to-Action Buttons -->
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="#collection" class="bg-amber-800 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-amber-900 transition">
+          Explore Collections
+        </a>
+        <a href="#custom" class="bg-white text-amber-800 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition">
+          Customize Your Order
+        </a>
+      </div>
+    </div>
+  </header>
+  
+
 
     <!-- Value Props -->
-    <section class="py-12 bg-amber-50">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-                <i class="fas fa-truck text-3xl text-amber-800 mb-4"></i>
-                <h3 class="font-bold text-lg">Countrywide Delivery</h3>
-                <p class="text-gray-600">From Nairobi to Kisumu, we bring luxury to your doorstep.</p>
-            </div>
-            <div>
-                <i class="fas fa-couch text-3xl text-amber-800 mb-4"></i>
-                <h3 class="font-bold text-lg">Custom Fabrics</h3>
-                <p class="text-gray-600">Choose from Gamuza, Velvet, or Leatherette textures.</p>
-            </div>
-            <div>
-                <i class="fas fa-tools text-3xl text-amber-800 mb-4"></i>
-                <h3 class="font-bold text-lg">Direct Workshop Prices</h3>
-                <p class="text-gray-600">Premium quality without the middleman markup.</p>
-            </div>
-        </div>
-    </section>
+<section id="value" class="py-12 bg-amber-50">
+    <div class="max-w-7xl mx-auto px-4 text-center mb-12">
+      <h2 class="text-3xl font-bold">Why Choose CESS Furniture</h2>
+      <p class="text-gray-600 mt-2">Luxury, affordability, and trust—crafted for modern Kenyan homes.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center">
+      
+      <!-- Delivery -->
+      <div class="p-6">
+        <i class="fas fa-truck text-4xl text-amber-800 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">Countrywide Delivery</h3>
+        <p class="text-gray-600">From Nairobi to Kisumu, enjoy seamless delivery bringing comfort to your doorstep.</p>
+      </div>
+      
+      <!-- Fabrics -->
+      <div class="p-6">
+        <i class="fas fa-couch text-4xl text-amber-800 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">Custom Fabrics</h3>
+        <p class="text-gray-600">Select from Gamuza, Velvet, or Leatherette—crafted to match your taste and elevate your home.</p>
+      </div>
+      
+      <!-- Prices -->
+      <div class="p-6">
+        <i class="fas fa-tools text-4xl text-amber-800 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">Direct Workshop Prices</h3>
+        <p class="text-gray-600">Premium craftsmanship at honest prices—no middlemen, just exceptional value.</p>
+      </div>
+      
+      <!-- Pay After Delivery -->
+      <div class="p-6">
+        <i class="fas fa-hand-holding-usd text-4xl text-amber-800 mb-4"></i>
+        <h3 class="font-bold text-xl mb-2">Pay After Delivery</h3>
+        <p class="text-gray-600">Shop with confidence—inspect your furniture first, then pay when satisfied.</p>
+      </div>
+      
+    </div>
+  </section>
+  
+
+   <!-- Product Range -->
+<section class="py-16 max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-4 text-center">Explore Our Collections</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+      
+      <!-- Living Room -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="font-bold text-xl mb-4 text-amber-800">Living Room • Crafted for Comfort</h3>
+        <ul class="space-y-3 text-gray-700 list-disc pl-5">
+          <li><span class="font-semibold">Sofa Sets:</span> 5, 6, and 7-seater options.</li>
+          <li><span class="font-semibold">L-Shaped Sofas:</span> Compact sectional designs with wooden legs.</li>
+          <li><span class="font-semibold">Sofa Beds:</span> Multi-functional with adjustable backrests and high-density foam.</li>
+          <li><span class="font-semibold">Chesterfield Sofas:</span> Elegant deep-buttoned designs with metallic accents.</li>
+          <li><span class="font-semibold">Dining Sets:</span> Solid hardwood tables, including popular 6-seater models.</li>
+          <li><span class="font-semibold">Coffee Tables:</span> Glass tops and matching footstools.</li>
+        </ul>
+      </div>
+      
+      <!-- Bedroom -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="font-bold text-xl mb-4 text-amber-800">Restful Nights</h3>
+        <ul class="space-y-3 text-gray-700 list-disc pl-5">
+          <li><span class="font-semibold">Hardwood Bed Frames:</span> 5x6 and 6x6 sizes in mahogany or Tanguile.</li>
+          <li><span class="font-semibold">Chester Beds:</span> Fully upholstered headboards and footboards.</li>
+          <li><span class="font-semibold">Storage Beds:</span> Built-in under-mattress compartments.</li>
+          <li><span class="font-semibold">Mattresses:</span> Orthopedic, spring, and high-density foam options.</li>
+        </ul>
+      </div>
+      
+      <!-- Accessories -->
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 class="font-bold text-xl mb-4 text-amber-800">Personalize Your Space</h3>
+        <ul class="space-y-3 text-gray-700 list-disc pl-5">
+          <li><span class="font-semibold">Decorative Pillows:</span> Fiber-filled with custom covers.</li>
+          <li><span class="font-semibold">Premium Fabrics:</span> German leatherette, Wales, Bailey, and more.</li>
+          <li><span class="font-semibold">Loose Stools:</span> Ottomans and footstools to match your sets.</li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+  
 
     <!-- Collection Grid -->
     <section id="collection" class="py-20 max-w-7xl mx-auto px-4">
@@ -102,7 +231,7 @@
             </div>
             <!-- Item 4 -->
             <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
-                <img src="images/sofa1.png" alt="Classic 3-Seater Sofa" class="h-64 w-full object-cover" loading="lazy">
+                <img src="images/hero1.png" alt="Classic 3-Seater Sofa" class="h-64 w-full object-cover" loading="lazy">
                 <div class="p-6">
                     <h3 class="font-bold text-xl mb-2">Classic 3-Seater Sofa</h3>
                     <p class="text-gray-600 mb-4 font-semibold text-amber-800">Starting KES 38,000</p>
@@ -127,60 +256,103 @@
                     <a href="https://wa.me?text=I%20am%20interested%20in%20the%208-Seater%20Dining%20Set" class="block text-center border-2 border-amber-800 text-amber-800 py-2 rounded-lg font-bold hover:bg-amber-800 hover:text-white transition">Inquire Now</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Custom Orders -->
-    <section id="custom" class="py-20 bg-amber-50">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl font-bold mb-6 text-center md:text-left">Custom Orders</h2>
-                <p class="text-gray-600 text-lg mb-6">
-                    Looking for a specific size, fabric, or design? Send us your requirements and we’ll recommend the best options for your home.
-                </p>
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-amber-100">
-                    <h3 class="font-bold text-xl mb-3 text-amber-800">What you can customize</h3>
-                    <p class="text-gray-700 mb-2"><span class="font-semibold">Fabric & color</span> (Gamuza, Velvet, Leatherette)</p>
-                    <p class="text-gray-700 mb-2"><span class="font-semibold">Size & layout</span> for your space</p>
-                    <p class="text-gray-700"><span class="font-semibold">Finishing details</span> tailored to your style</p>
+            <!-- Item 7 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <img src="images/sofa2.png" alt="5-Seater Standard Sofa Set" class="h-64 w-full object-cover" loading="lazy">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">5-Seater Standard Sofa Set</h3>
+                    <p class="text-gray-600 mb-4 font-semibold text-amber-800">Starting KES 52,000</p>
+                    <a href="https://wa.me?text=I%20am%20interested%20in%20the%205-Seater%20Standard%20Sofa%20Set" class="block text-center border-2 border-amber-800 text-amber-800 py-2 rounded-lg font-bold hover:bg-amber-800 hover:text-white transition">Inquire Now</a>
                 </div>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-amber-100">
-                <h3 class="font-bold text-2xl mb-3">Get a Quote on WhatsApp</h3>
-                <p class="text-gray-600 mb-6">
-                    Share what you want and your preferred location in Kenya. We’ll reply with a clear quote and timeline.
-                </p>
-                <a
-                    href="https://wa.me?text=Hello%20CESS%20Furnitures%2C%20I%20need%20a%20custom%20quote%20for%20a%20sofa%2C%20bed%20or%20dining%20set.%20My%20location%20is%20____.%20My%20measurements%20are%20____."
-                    class="block w-full text-center bg-green-600 text-white px-6 py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition"
-                >
-                    Send Inquiry
-                </a>
-                <p class="text-sm text-gray-500 mt-4">
-                    Tip: include your measurements and preferred fabric.
-                </p>
+            <!-- Item 8 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <img src="images/sofa3.png" alt="Chesterfield Sofa" class="h-64 w-full object-cover" loading="lazy">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Chesterfield Sofa</h3>
+                    <p class="text-gray-600 mb-4 font-semibold text-amber-800">Starting KES 68,000</p>
+                    <a href="https://wa.me?text=I%20am%20interested%20in%20the%20Chesterfield%20Sofa" class="block text-center border-2 border-amber-800 text-amber-800 py-2 rounded-lg font-bold hover:bg-amber-800 hover:text-white transition">Inquire Now</a>
+                </div>
+            </div>
+            <!-- Item 9 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <img src="images/sofa4.png" alt="Sofa Bed with Adjustable Backrest" class="h-64 w-full object-cover" loading="lazy">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Sofa Bed with Adjustable Backrest</h3>
+                    <p class="text-gray-600 mb-4 font-semibold text-amber-800">Starting KES 58,000</p>
+                    <a href="https://wa.me?text=I%20am%20interested%20in%20the%20Sofa%20Bed%20with%20Adjustable%20Backrest" class="block text-center border-2 border-amber-800 text-amber-800 py-2 rounded-lg font-bold hover:bg-amber-800 hover:text-white transition">Inquire Now</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Locations -->
-    <section id="locations" class="bg-gray-900 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-12">Visit Our Showrooms</h2>
-            <div class="grid md:grid-cols-2 gap-12 text-left">
-                <div class="bg-gray-800 p-8 rounded-xl border-l-4 border-amber-800">
-                    <h3 class="text-xl font-bold mb-2">Eastern Bypass</h3>
-                    <p class="text-gray-400">Near 75 Embakasi Garrison</p>
-                    <p class="mt-4 font-bold">Open: Mon - Sat (8AM - 6PM)</p>
-                </div>
-                <div class="bg-gray-800 p-8 rounded-xl border-l-4 border-amber-800">
-                    <h3 class="text-xl font-bold mb-2">Kangundo Road</h3>
-                    <p class="text-gray-400">Mowlem Area, Nairobi</p>
-                    <p class="mt-4 font-bold">Open: Mon - Sat (8AM - 6PM)</p>
-                </div>
-            </div>
+   <!-- Custom Orders -->
+<section id="custom" class="py-20 bg-amber-50">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      <!-- Customization Info -->
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-center md:text-left">Made Just for You</h2>
+        <p class="text-gray-600 text-lg mb-6">
+          Your home deserves furniture that fits perfectly. Share your vision—size, fabric, or design—and we’ll craft pieces tailored to your lifestyle.
+        </p>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-amber-100">
+          <h3 class="font-bold text-xl mb-3 text-amber-800">What You Can Personalize</h3>
+          <p class="text-gray-700 mb-2"><span class="font-semibold">Fabric & Color:</span> Choose from Gamuza, Velvet, or Leatherette.</p>
+          <p class="text-gray-700 mb-2"><span class="font-semibold">Size & Layout:</span> Custom dimensions and arrangements for your space.</p>
+          <p class="text-gray-700"><span class="font-semibold">Finishing Touches:</span> Details that reflect your unique style.</p>
         </div>
-    </section>
+      </div>
+      
+      <!-- WhatsApp Quote -->
+      <div class="bg-white p-8 rounded-xl shadow-sm border border-amber-100">
+        <h3 class="font-bold text-2xl mb-3">Request a Quote Instantly</h3>
+        <p class="text-gray-600 mb-6">
+          Send us your requirements and location in Kenya via WhatsApp. We’ll respond with a clear quote and delivery timeline.
+        </p>
+        <a
+          href="https://wa.me?text=Hello%20CESS%20Furnitures%2C%20I%20need%20a%20custom%20quote%20for%20a%20sofa%2C%20bed%20or%20dining%20set.%20My%20location%20is%20____.%20My%20measurements%20are%20____."
+          class="block w-full text-center bg-green-600 text-white px-6 py-4 rounded-lg font-bold text-lg hover:bg-green-700 transition"
+        >
+          Send Inquiry
+        </a>
+        <p class="text-sm text-gray-500 mt-4">
+          Tip: Include your measurements and preferred fabric for faster service.
+        </p>
+      </div>
+      
+    </div>
+  </section>
+  
+
+   <!-- Locations -->
+<section id="locations" class="bg-gray-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Visit Our Showrooms</h2>
+      <p class="text-gray-400 mb-12">Step into comfort—experience our collections in person.</p>
+      
+      <div class="grid md:grid-cols-2 gap-12 text-left">
+        
+        <!-- Embakasi -->
+        <div class="bg-gray-800 p-8 rounded-xl border-l-4 border-amber-800">
+          <h3 class="text-xl font-bold mb-2">Embakasi</h3>
+          <p class="text-gray-400 flex items-center"><span class="mr-2">📍</span> Near Embakasi Garrison, Nairobi</p>
+          <p class="mt-4 font-bold flex items-center"><span class="mr-2">⏰</span> Mon - Sat (8AM - 6PM)</p>
+          <a href="https://maps.google.com" class="text-amber-500 mt-4 inline-block hover:underline">View on Map →</a>
+        </div>
+        
+        <!-- Ruaka -->
+        <div class="bg-gray-800 p-8 rounded-xl border-l-4 border-amber-800">
+          <h3 class="text-xl font-bold mb-2">Ruaka</h3>
+          <p class="text-gray-400 flex items-center"><span class="mr-2">📍</span> Ruaka Town, Kiambu County</p>
+          <p class="mt-4 font-bold flex items-center"><span class="mr-2">⏰</span> Mon - Sat (8AM - 6PM)</p>
+          <a href="https://maps.google.com" class="text-amber-500 mt-4 inline-block hover:underline">View on Map →</a>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
 
     <!-- Footer -->
     <footer class="py-10 text-center text-gray-500 border-t">
